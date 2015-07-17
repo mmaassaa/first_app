@@ -1,0 +1,523 @@
+find_header: checking for sqlite3.h... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static  -lpthread -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sqlite3.h>
+/* end */
+
+--------------------
+
+find_library: checking for sqlite3_libversion_number() in -lsqlite3... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_libversion_number’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_libversion_number’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_libversion_number(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_libversion_number(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_proc_arity()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_proc_arity; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_proc_arity; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_integer_pack()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_integer_pack; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_integer_pack; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_initialize()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_initialize’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_initialize’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_initialize(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_initialize(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_backup_init()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_backup_init’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_backup_init’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_backup_init(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_backup_init(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_column_database_name()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_column_database_name’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_column_database_name’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_column_database_name(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_column_database_name(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_enable_load_extension()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_enable_load_extension’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_enable_load_extension’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_enable_load_extension(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_enable_load_extension(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_load_extension()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_load_extension’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_load_extension’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_load_extension(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_load_extension(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_open_v2()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_open_v2’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_open_v2’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_open_v2(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_open_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_prepare_v2()... -------------------- yes
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:57: エラー: ‘sqlite3_prepare_v2’ が宣言されていません (この関数内での最初の使用)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return 0; }
+                                                         ^
+conftest.c:13:57: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:13:32: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return 0; }
+                                ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return 0; }
+/* end */
+
+"gcc -o conftest -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat conftest.c  -L. -L/home/masa/.rbenv/versions/2.2.2/lib -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L. -L/home/masa/.rbenv/versions/2.2.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic    -lsqlite3  -Wl,-R/home/masa/.rbenv/versions/2.2.2/lib -L/home/masa/.rbenv/versions/2.2.2/lib -lruby-static -lsqlite3  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:13:1: 警告: 関数 ‘sqlite3_prepare_v2’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+ int t(void) { sqlite3_prepare_v2(); return 0; }
+ ^
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { sqlite3_prepare_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_type: checking for sqlite3_int64 in sqlite3.h... -------------------- yes
+
+"gcc -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sqlite3.h>
+4: 
+5: /*top*/
+6: typedef sqlite3_int64 conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for sqlite3_uint64 in sqlite3.h... -------------------- yes
+
+"gcc -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/x86_64-linux -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0/ruby/backward -I/home/masa/.rbenv/versions/2.2.2/include/ruby-2.2.0 -I. -I/home/masa/.rbenv/versions/2.2.2/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sqlite3.h>
+4: 
+5: /*top*/
+6: typedef sqlite3_uint64 conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
